@@ -1,17 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
-
-var numbers = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-
-func main() {
-	shuffled_array := shuffle(numbers)
-	fmt.Println(shuffled_array)
-}
 
 /* 
 Implementation of the "inside-out" version of the
