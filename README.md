@@ -38,3 +38,11 @@ On the proposed scenario, I would consider the following metrics:
 - **Packet loss rate**: useful to analyze the reliability of the server and/or network
 - **Number of terminated connections due to invalid certificates**: useful to detect security attacks
 - **Latency and Throughtput**: to detect any network issues that affect connection speed
+
+The approach to collect these metrics would depend on the technology and providers used to deploy the SSL-offloader/Proxy server. For example: 
+- If we use a cloud based server, most of the providers (AWS, MS Azure, Google Platform, etc.) would collect these and even include additional metrics to monitor our server.
+- If we use a local server, then we should consider using a monitoring solution (e.g. Zabbix, Nagios) that would collect these metrics. Additionally, some of these specialized software would allow us to define our own metrics by creating scripts to collect them and also create triggers to solve or mitigate issues.
+
+I think that the most challenging parts of monitoring this type of servers is the definition of metrics and understanding the collected data. The performance of the SSL-offloader/Proxy server has strong implications on the security of backend applications. This means that weak monitoring may affect the confidentiality, integrity or availability of the apps behind the SSL-offloader/Proxy server.
+
+In conclusion, well defined metrics and a clear understanding of what each metric implies would result in a good visualization of the server's performance, helping the team to quickly identify problems and, therefore, solve or mitigate these issues faster.
